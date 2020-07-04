@@ -1,0 +1,4 @@
+echo boot root home swap && cfdisk && mkfs.ext4 /dev/sda2 && mkfs.fat /dev/sda1 && mkfs.ext4 /dev/sda3 && mkswap /dev/sda4 && swapon /dev/sda4 && echo PARTION KLAAR. &&
+mount /dev/sd3 /mnt/gentoo && cd /mnt/gentoo && wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20200701T214503Z/stage3-amd64-20200701T214503Z.tar.xz &&
+echo tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner && echo nano -w /mnt/gentoo/etc/portage/make.conf && MAKEOPTS="-j2" (-j2 staat voor aantal cores het systeem heeft de goede berekening is aantal cores in sysyteem plus 1. Bijvoorbeeld 4 cores maakt dan -j5) &&
+ 
